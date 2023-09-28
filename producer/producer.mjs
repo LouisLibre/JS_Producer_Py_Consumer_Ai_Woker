@@ -1,9 +1,11 @@
 import * as redis from 'redis';
-import path from 'path';
 
 const client = redis.createClient();
 
 await client.connect();
+
+import path from 'path';
+
 
 client.on('error', (error) => {
   console.error(`Redis client not connected to the server: ${error}`);
@@ -33,6 +35,7 @@ const transcribeVideoOrder = {
   fileName: fileName
 }
 
+//
 // register key-value pair in redis for fileName and filePath
 
 try {
